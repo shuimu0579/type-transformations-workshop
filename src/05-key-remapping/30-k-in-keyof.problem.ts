@@ -6,11 +6,17 @@ interface Attributes {
   age: number;
 }
 
-type AttributeGetters = unknown;
+// type AttributeGetters<T> = T extends Attributes
+//   ? { [P in keyof T]: () => T[P] }
+//   : never;
+type AttributeGetters = {
+  [K in keyof Attributes]: () => Attributes[K];
+};
 
 type tests = [
   Expect<
     Equal<
+      // AttributeGetters<Attributes>,
       AttributeGetters,
       {
         firstName: () => string;
@@ -18,5 +24,5 @@ type tests = [
         age: () => number;
       }
     >
-  >,
+  >
 ];
