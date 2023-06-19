@@ -1,6 +1,6 @@
 import { Equal, Expect } from "../helpers/type-utils";
 
-type CreateDataShape<TData, TError = undefined> = {
+type CreateDataShape<TData, TError> = {
   data: TData;
   error: TError;
 };

@@ -1,9 +1,8 @@
-import { Object } from "ts-toolbelt";
 import { Equal, Expect } from "../helpers/type-utils";
 
 type TemplateLiteralKey = `${"user" | "post" | "comment"}${"Id" | "Name"}`;
 
-type ObjectOfKeys = Record<TemplateLiteralKey, string>;
+type ObjectOfKeys = unknown;
 
 type tests = [
   Expect<

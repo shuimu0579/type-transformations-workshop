@@ -12,8 +12,7 @@ type Route =
   | { route: "/admin"; search: {} }
   | { route: "/admin/users"; search: {} };
 
-type RoutesObject = { [R in Route as R["route"]]: R["search"] };
-
+type RoutesObject = unknown;
 type tests = [
   Expect<
     Equal<

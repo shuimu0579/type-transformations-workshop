@@ -1,10 +1,9 @@
 import { Equal, Expect } from "../helpers/type-utils";
 
-const fruits = ["apple", "banana", "orange"] as const;
+const fruits = ["apple", "banana", "orange"];
 
-type AppleOrBanana = (typeof fruits)[0 | 1];
-// type Fruit = (typeof fruits)[0 | 1 | 2];
-type Fruit = (typeof fruits)[number];
+type AppleOrBanana = unknown;
+type Fruit = unknown;
 
 type tests = [
   Expect<Equal<AppleOrBanana, "apple" | "banana">>,

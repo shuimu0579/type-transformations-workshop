@@ -14,8 +14,7 @@ export type Event =
       event: KeyboardEvent;
     };
 
-// type NonKeyDownEvents = Extract<Event, { type: "click" | "focus" }>;
-type NonKeyDownEvents = Exclude<Event, { type: "keydown" }>;
+type NonKeyDownEvents = unknown;
 
 type tests = [
   Expect<

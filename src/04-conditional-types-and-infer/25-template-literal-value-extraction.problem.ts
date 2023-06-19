@@ -8,7 +8,7 @@ type Names = [
   "BB King"
 ];
 
-type GetSurname<T> = T extends `${infer A} ${infer B}` ? B : never;
+type GetSurname<T> = unknown;
 
 type tests = [
   Expect<Equal<GetSurname<Names[0]>, "Pocock">>,
